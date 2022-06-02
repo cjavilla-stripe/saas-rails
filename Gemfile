@@ -72,3 +72,7 @@ gem "letter_opener", "~> 1.8", :group => :development
 gem "sidekiq", "~> 6.4"
 
 gem "stripe", "~> 6.2"
+
+gem "devise", "~> 4.8"
+
+gem "pay", "~> 4.0"
