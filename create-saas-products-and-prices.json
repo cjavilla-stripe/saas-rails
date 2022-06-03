@@ -1,0 +1,140 @@
+{
+  "_meta": {
+    "template_version": 0
+  },
+  "fixtures": [
+    {
+      "name": "startup_product",
+      "path": "/v1/products",
+      "method": "post",
+      "params": {
+        "name": "Startup",
+        "description": "The essentials for when you're just getting started.",
+        "metadata": {
+          "features": "[\"2 projects\", \"Up to 1,000 apps\", \"Basic analytics\", \"E-mail support\"]"
+        }
+      }
+    },
+    {
+      "name": "startup_monthly_price",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "currency": "usd",
+        "product": "${startup_product:id}",
+        "unit_amount": 2400,
+        "recurring": {
+          "interval": "month"
+        },
+        "lookup_key": "startup",
+        "transfer_lookup_key": true,
+        "tax_behavior": "exclusive"
+      }
+    },
+    {
+      "name": "startup_annual_price",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "currency": "usd",
+        "product": "${startup_product:id}",
+        "unit_amount": 24000,
+        "recurring": {
+          "interval": "year"
+        },
+        "tax_behavior": "exclusive",
+        "lookup_key": "startup_annual",
+        "transfer_lookup_key": true
+      }
+    },
+    {
+      "name": "business_product",
+      "path": "/v1/products",
+      "method": "post",
+      "params": {
+        "name": "Business",
+        "description": "For businesses looking to achieve maximum efficiency and time savings.",
+        "metadata": {
+          "features": "[\"10 projects\", \"Up to 10,000 apps\", \"Advanced analytics\", \"24-hour chat support\", \"Channel management\"]",
+          "most_popular": true
+        }
+      }
+    },
+    {
+      "name": "business_monthly_price",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "currency": "usd",
+        "product": "${business_product:id}",
+        "unit_amount": 3200,
+        "recurring": {
+          "interval": "month"
+        },
+        "lookup_key": "business",
+        "transfer_lookup_key": true,
+        "tax_behavior": "exclusive"
+      }
+    },
+    {
+      "name": "business_annual_price",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "currency": "usd",
+        "product": "${business_product:id}",
+        "unit_amount": 32000,
+        "recurring": {
+          "interval": "year"
+        },
+        "tax_behavior": "exclusive",
+        "lookup_key": "business_annual",
+        "transfer_lookup_key": true
+      }
+    },
+    {
+      "name": "enterprise_product",
+      "path": "/v1/products",
+      "method": "post",
+      "params": {
+        "name": "Enterprise",
+        "description": "For businesses looking for the maximum competitive edge and expanding their reach.",
+        "metadata": {
+          "features": "[\"Unlimited projects\", \"Unlimited apps\", \"Advanced analytics\", \"1-hour, dedicated support response time\", \"Channel management\", \"Competitor analysis\"]"
+        }
+      }
+    },
+    {
+      "name": "enterprise_monthly_price",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "currency": "usd",
+        "product": "${enterprise_product:id}",
+        "unit_amount": 4800,
+        "recurring": {
+          "interval": "month"
+        },
+        "lookup_key": "enterprise",
+        "transfer_lookup_key": true,
+        "tax_behavior": "exclusive"
+      }
+    },
+    {
+      "name": "enterprise_annual_price",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "currency": "usd",
+        "product": "${enterprise_product:id}",
+        "unit_amount": 48000,
+        "recurring": {
+          "interval": "year"
+        },
+        "tax_behavior": "exclusive",
+        "lookup_key": "enterprise_annual",
+        "transfer_lookup_key": true
+      }
+    }
+  ]
+}
