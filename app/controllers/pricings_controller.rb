@@ -1,5 +1,10 @@
 class PricingsController < ApplicationController
+  before_action :authenticate_user!
+
   def show
+  end
+
+  def custom
     @prices = Stripe::Price.list(
       expand: ['data.product'],
       recurring: {
